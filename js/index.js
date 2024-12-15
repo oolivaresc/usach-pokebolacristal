@@ -84,7 +84,7 @@
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "https://oolivaresc.github.io"
+          "Access-Control-Allow-Origin": "*"
         }});
       data = await response.json();
       
