@@ -82,8 +82,10 @@
     try {
       const response = await fetch(URL, {
         method: "GET",
+        mode: "no-cors",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*"
         }});
       data = await response.json();
       
