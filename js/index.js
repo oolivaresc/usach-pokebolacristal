@@ -9,7 +9,7 @@
     { signName: "Leo", initDate:"23/07", endDate: "22/08", pokemons: ["pyroar"], element:"Fire/Fuego"},
     { signName: "Virgo", initDate:"23/08", endDate: "22/09", pokemons: ["gardevoir"],element:"Earth/Tierra"},
     { signName: "Libra", initDate:"23/09", endDate: "22/10", pokemons: ["togekiss"], element:"Air/Aire" },
-    { signName: "Scorpio", initDate:"23/10", endDate: "21/11", pokemons: ["drapion"] }, element:"Water/Agua"
+    { signName: "Scorpio", initDate:"23/10", endDate: "21/11", pokemons: ["drapion"], element:"Water/Agua"},
     { signName: "Sagittarius", initDate:"22/11", endDate: "21/12", pokemons: ["rapidash"],element:"Fire/Fuego" },
     { signName: "Capricorn", initDate:"22/12", endDate: "19/01", pokemons: ["gogoat"],element:"Earth/Tierra"},
     { signName: "Aquarius", initDate:"20/01", endDate: "18/02", pokemons: ["vaporeon"], element:"Air/Aire"},
@@ -82,7 +82,6 @@
     try {
       const response = await fetch(URL, {
         method: "GET",
-        mode: 'no-cors',
         headers: {
           "Content-Type": "application/json"
         }});
