@@ -1,13 +1,5 @@
 (async () => {
 
-  const elementos =[
-    "Fuego",
-    "Tierra",
-    "Aire",
-    "Agua"
-
-  ]
-
   //Array de objetos signos zodiacales y sus pokemons
   const sign = [
     { signName: "Aries", initDate:"21/03", endDate: "19/04", pokemons: ["blaziken"], element:"Fire/Fuego" },
