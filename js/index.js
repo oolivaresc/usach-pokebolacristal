@@ -2,18 +2,18 @@
 
   //Array de objetos signos zodiacales y sus pokemons
   const sign = [
-    { signName: "Aries", initDate:"21/03", endDate: "19/04", pokemons: ["blaziken"] },
-    { signName: "Taurus", initDate:"20/04", endDate: "20/05", pokemons: ["tauros"] },
-    { signName: "Gemini", initDate:"21/05", endDate: "20/06", pokemons: ["plusle", "minun"] },
-    { signName: "Cancer", initDate:"21/06", endDate: "22/07", pokemons: ["kingler"] },
-    { signName: "Leo", initDate:"23/07", endDate: "22/08", pokemons: ["pyroar"] },
-    { signName: "Virgo", initDate:"23/08", endDate: "22/09", pokemons: ["gardevoir"] },
-    { signName: "Libra", initDate:"23/09", endDate: "22/10", pokemons: ["togekiss"] },
-    { signName: "Scorpio", initDate:"23/10", endDate: "21/11", pokemons: ["drapion"] },
-    { signName: "Sagittarius", initDate:"22/11", endDate: "21/12", pokemons: ["rapidash"] },
-    { signName: "Capricorn", initDate:"22/12", endDate: "19/01", pokemons: ["gogoat"] },
-    { signName: "Aquarius", initDate:"20/01", endDate: "18/02", pokemons: ["vaporeon"] },
-    { signName: "Pisces", initDate:"19/02", endDate: "20/03", pokemons: ["milotic"] },
+    { signName: "Aries", initDate:"21/03", endDate: "19/04", pokemons: ["blaziken"], element:"Fire/Fuego" },
+    { signName: "Taurus", initDate:"20/04", endDate: "20/05", pokemons: ["tauros"] , element:"Earth/Tierra"}, 
+    { signName: "Gemini", initDate:"21/05", endDate: "20/06", pokemons: ["plusle", "minun"], element:"Air/Aire"},
+    { signName: "Cancer", initDate:"21/06", endDate: "22/07", pokemons: ["kingler"], element:"Water/Agua"},
+    { signName: "Leo", initDate:"23/07", endDate: "22/08", pokemons: ["pyroar"], element:"Fire/Fuego"},
+    { signName: "Virgo", initDate:"23/08", endDate: "22/09", pokemons: ["gardevoir"],element:"Earth/Tierra"},
+    { signName: "Libra", initDate:"23/09", endDate: "22/10", pokemons: ["togekiss"], element:"Air/Aire" },
+    { signName: "Scorpio", initDate:"23/10", endDate: "21/11", pokemons: ["drapion"] }, element:"Water/Agua"
+    { signName: "Sagittarius", initDate:"22/11", endDate: "21/12", pokemons: ["rapidash"],element:"Fire/Fuego" },
+    { signName: "Capricorn", initDate:"22/12", endDate: "19/01", pokemons: ["gogoat"],element:"Earth/Tierra"},
+    { signName: "Aquarius", initDate:"20/01", endDate: "18/02", pokemons: ["vaporeon"], element:"Air/Aire"},
+    { signName: "Pisces", initDate:"19/02", endDate: "20/03", pokemons: ["milotic"] , element:"Water/Agua"}
   ];
 
   //Array de colores
