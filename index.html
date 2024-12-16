@@ -1,78 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PokeHoróscopo - Tarot y Consejero Espiritual</title>
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horóscopo Pokémon</title>
+    <!-- Enlace a tu archivo CSS -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="navbar-container">
-      <h1 class="logo">PokeHoróscopo - Tarot y Consejero Espiritual</h1>
-      <button class="menu-button">Menú</button>
-    </div>
-  </nav>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <h1>PokeHoróscopo - Tarot y Consejero Espiritual</h1>
+        </nav>
+    </header>
 
-  <!-- MAIN -->
-  <main class="main">
-    <section class="hero-section">
-      <div class="image-placeholder">IMAGEN</div>
-    </section>
+    <!-- Main -->
+    <main>
+        <!-- Input para la fecha y botón consultar -->
+        <section id="input-section">
+            <h2>Ingresa tu fecha de nacimiento</h2>
+            <input type="date" id="birthDate" placeholder="DD/MM/YYYY">
+            <button id="consultButton">Consultar</button>
+        </section>
 
-    <section class="horoscope-input">
-      <h2>Ingresa tu fecha de nacimiento</h2>
-      <div class="input-container">
-        <input type="text" placeholder="DD/MM/YYYY" />
-        <button>Consultar</button>
-      </div>
-    </section>
+        <!-- Sección para mostrar los resultados -->
+        <section id="results">
+            <h3>Tu Horóscopo</h3>
+            <p><strong>Signo:</strong> <span id="sign"></span></p>
+            <p><strong>Fecha Actual:</strong> <span id="date"></span></p>
+            <p><strong>Compatibilidad:</strong> <span id="compatibility"></span></p>
+            <p><strong>Número de la Suerte:</strong> <span id="luckyNumber"></span></p>
+            <p><strong>Hora de la Suerte:</strong> <span id="luckyTime"></span></p>
+            <p><strong>Color del Día:</strong> <span id="color"></span></p>
+            <p><strong>Descripción:</strong> <span id="description"></span></p>
 
-    <section class="results">
-      <div class="buttons-container">
-        <button>Géminis</button>
-        <button>Compatibilidad</button>
-        <button>Elemento</button>
-        <button>Color</button>
-        <button>Número de la suerte</button>
-        <button>Hora de la suerte</button>
-      </div>
-      <div class="result-card">
-        <p>
-          Go ahead and act confidently, Géminis. You will probably find...
-        </p>
-      </div>
-      <button class="pokemon-button">Pokémon</button>
-    </section>
-  </main>
+            <h3>Consejero Pokémon</h3>
+            <div id="pokemons" style="display: flex; gap: 10px;"></div>
+        </section>
+    </main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div>
-        <h3>Servicios:</h3>
-        <ul>
-          <li>Lectura de Tarot</li>
-          <li>Flores de Bach</li>
-          <li>Carta Astral</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Contacto:</h3>
-        <p>Teléfono: 1234</p>
-        <p>Email: email</p>
-      </div>
-      <div>
-        <h3>Síguenos:</h3>
-        <p>Instagram: logo</p>
-        <p>Facebook: logo</p>
-      </div>
-    </div>
-    <p class="copyright">
-      Creado por Baguetito-Corp 2024. Todos los derechos reservados.
-    </p>
-  </footer>
-  <script src="js/index.js"></script>
+    <!-- Footer -->
+    <footer>
+        <p>Creado por Baguetito-Corp 2024. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/index.js"></script>
 </body>
 </html>
