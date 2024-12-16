@@ -1,19 +1,19 @@
 (async () => {
 
   //Array de objetos signos zodiacales y sus pokemons
-  const sign = [
-    { signName: "Aries", initDate:"21/03", endDate: "19/04", pokemons: ["blaziken"], element:"Fire/Fuego" },
-    { signName: "Taurus", initDate:"20/04", endDate: "20/05", pokemons: ["tauros"] , element:"Earth/Tierra"}, 
-    { signName: "Gemini", initDate:"21/05", endDate: "20/06", pokemons: ["plusle", "minun"], element:"Air/Aire"},
-    { signName: "Cancer", initDate:"21/06", endDate: "22/07", pokemons: ["kingler"], element:"Water/Agua"},
-    { signName: "Leo", initDate:"23/07", endDate: "22/08", pokemons: ["pyroar"], element:"Fire/Fuego"},
-    { signName: "Virgo", initDate:"23/08", endDate: "22/09", pokemons: ["gardevoir"],element:"Earth/Tierra"},
-    { signName: "Libra", initDate:"23/09", endDate: "22/10", pokemons: ["togekiss"], element:"Air/Aire" },
-    { signName: "Scorpio", initDate:"23/10", endDate: "21/11", pokemons: ["drapion"], element:"Water/Agua"},
-    { signName: "Sagittarius", initDate:"22/11", endDate: "21/12", pokemons: ["rapidash"],element:"Fire/Fuego" },
-    { signName: "Capricorn", initDate:"22/12", endDate: "19/01", pokemons: ["gogoat"],element:"Earth/Tierra"},
-    { signName: "Aquarius", initDate:"20/01", endDate: "18/02", pokemons: ["vaporeon"], element:"Air/Aire"},
-    { signName: "Pisces", initDate:"19/02", endDate: "20/03", pokemons: ["milotic"] , element:"Water/Agua"}
+  const signs = [
+    { signName: "Aries", initDate:"21-03", endDate: "19-04", pokemons: ["blaziken"], element:"Fire/Fuego" },
+    { signName: "Taurus", initDate:"20-04", endDate: "20-05", pokemons: ["tauros"] , element:"Earth/Tierra"}, 
+    { signName: "Gemini", initDate:"21-05", endDate: "20-06", pokemons: ["plusle", "minun"], element:"Air/Aire"},
+    { signName: "Cancer", initDate:"21-06", endDate: "22-07", pokemons: ["kingler"], element:"Water/Agua"},
+    { signName: "Leo", initDate:"23-07", endDate: "22-08", pokemons: ["pyroar"], element:"Fire/Fuego"},
+    { signName: "Virgo", initDate:"23-08", endDate: "22-09", pokemons: ["gardevoir"],element:"Earth/Tierra"},
+    { signName: "Libra", initDate:"23-09", endDate: "22-10", pokemons: ["togekiss"], element:"Air/Aire" },
+    { signName: "Scorpio", initDate:"23-10", endDate: "21-11", pokemons: ["drapion"], element:"Water/Agua"},
+    { signName: "Sagittarius", initDate:"22-11", endDate: "21-12", pokemons: ["rapidash"],element:"Fire/Fuego" },
+    { signName: "Capricorn", initDate:"22-12", endDate: "19-01", pokemons: ["gogoat"],element:"Earth/Tierra"},
+    { signName: "Aquarius", initDate:"20-01", endDate: "18/-02", pokemons: ["vaporeon"], element:"Air/Aire"},
+    { signName: "Pisces", initDate:"19-02", endDate: "20-03", pokemons: ["milotic"] , element:"Water/Agua"}
   ];
 
   //Array de colores
@@ -64,6 +64,7 @@
   const dailyHoroscope = {
     sign: "",
     currentDate: "",
+    element: "",
     compatibility: "",
     luckyNumber: "",
     luckyTime: "",
@@ -74,10 +75,10 @@
 
   //Permite obtener el horoscopo a través de un API que solicita signo y día
   const getHoroscope = async (signSelected) => {
-    const URL =
-      "https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=" +
-      signSelected +
-      "&day=TODAY";
+    const URL = "https://api.breakingbadquotes.xyz/v1/quotes";
+      //"https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=" +
+      //signSelected +
+      //"&day=TODAY";
     let data;
     try {
       const response = await fetch(URL, {
@@ -114,11 +115,11 @@
   };
 
   const position = 2; //Cambiar el número para elegir el signo zodiacal
-  const signSelected = sign[position].signName; //Obtenemos el nombre del signo zodiacal en la posición indicada
-  const pokemonsSelected = sign[position].pokemons; //Obtenemos el nombre de los pokemon en la posición indicada
+  const signSelected = signs[position].signName; //Obtenemos el nombre del signo zodiacal en la posición indicada
+  const pokemonsSelected = signs[position].pokemons; //Obtenemos el nombre de los pokemon en la posición indicada
   
-  //Invoca a getHoroscope() usando el signo seleccionado
   /*
+  //Invoca a getHoroscope() usando el signo seleccionado
   const data = await getHoroscope(signSelected);
   dailyHoroscope.sign = signSelected;
   dailyHoroscope.currentDate = data.data.date;
@@ -127,41 +128,42 @@
   dailyHoroscope.luckyNumber = numbers[randomIntInRange(0, numbers.length-1)];
   dailyHoroscope.luckyTime = hours[randomIntInRange(0, hours.length-1)];
   dailyHoroscope.description = data.data.horoscope_data;
-  */
-
+  
   //Invoca a getPokemon() por cada pokemon seleccionado
   pokemonsSelected.forEach(async pokemon => {
     const data = await getPokemon(pokemon);
     dailyHoroscope.pokemons.push({"name": data.name, "image:": data.sprites.front_default});
     console.log(dailyHoroscope);
   });
+  */
 
-  
-  const btnDob = document.getElementById("btnDob");
+  const btnDob = document.getElementById("consultButton");
 
   btnDob.addEventListener('click', (event)=>{
-    const inputDobValue = document.getElementById("inputDob").value;
-    if(!inputDobValue){
+    const inputBirthDateValue = document.getElementById("birthDate").value;
+    if(!inputBirthDateValue){
       alert("Debe ingresar la fecha de nacimiento")
       return;
     }
-    const day = inputDobValue.split("/")[0];
-    const month = inputDobValue.split("/")[1];
 
-    const resultado = sign.filter(sign => {
+    const inputDay = inputBirthDateValue.split("-")[2];
+    const inputMonth = inputBirthDateValue.split("-")[1];
+    const currentYear = new Date().getFullYear();
 
-        console.log(sign);
-        const currentYear = new Date().getFullYear();
-        const date = new Date(day+"/"+month+"/"+currentYear);
-        const start = new Date(sign.initDate+"/"+currentYear);
-        const end = new Date(sign.endDate+"/"+currentYear);
-        console.log("date", date);
-        console.log("start", start);
-        console.log("end", end);
-        return date >= start && date <= end;
+    const inputDate = new Date(currentYear, inputMonth, inputDay);
+
+    for(let i=0;i<signs.length;i++){
+      const start = new Date(currentYear, signs[i].initDate.split("-")[1], signs[i].initDate.split("-")[0]);
+      const end = new Date(currentYear, signs[i].endDate.split("-")[1], signs[i].endDate.split("-")[0]);
+
+      if(inputDate >= start && inputDate <= end){
+        dailyHoroscope.sign = signs[i].signName;
+        dailyHoroscope.currentDate = inputBirthDateValue;
+        dailyHoroscope.element = signs[i].element;;
+        break;
       }
-    );
-    console.log(resultado);
+    }
+    console.log("dailyHoroscope", dailyHoroscope);
   });
   
 
