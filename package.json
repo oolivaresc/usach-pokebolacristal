@@ -1,0 +1,12 @@
+{
+  "name": "usach-pokebolacristal",
+  "version": "1.0.0",
+  "description": "HOLA",
+  "main": "index.js",
+  "scripts": {
+    "scss:compile": "sass sass/styles.scss css/styles.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
