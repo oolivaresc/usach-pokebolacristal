@@ -118,6 +118,7 @@
   const pokemonsSelected = sign[position].pokemons; //Obtenemos el nombre de los pokemon en la posición indicada
   
   //Invoca a getHoroscope() usando el signo seleccionado
+  /*
   const data = await getHoroscope(signSelected);
   dailyHoroscope.sign = signSelected;
   dailyHoroscope.currentDate = data.data.date;
@@ -126,6 +127,7 @@
   dailyHoroscope.luckyNumber = numbers[randomIntInRange(0, numbers.length-1)];
   dailyHoroscope.luckyTime = hours[randomIntInRange(0, hours.length-1)];
   dailyHoroscope.description = data.data.horoscope_data;
+  */
 
   //Invoca a getPokemon() por cada pokemon seleccionado
   pokemonsSelected.forEach(async pokemon => {
@@ -134,11 +136,33 @@
     console.log(dailyHoroscope);
   });
 
-  /*
-  const btnDob = document.getElementById("#btnDob");
+  
+  const btnDob = document.getElementById("btnDob");
+
   btnDob.addEventListener('click', (event)=>{
-    alert("Hola mundo!!!");
+    const inputDobValue = document.getElementById("inputDob").value;
+    if(!inputDobValue){
+      alert("Debe ingresar la fecha de nacimiento")
+      return;
+    }
+    const day = inputDobValue.split("/")[0];
+    const month = inputDobValue.split("/")[1];
+
+    const resultado = sign.filter(sign => {
+
+        console.log(sign);
+        const currentYear = new Date().getFullYear();
+        const date = new Date(day+"/"+month+"/"+currentYear);
+        const start = new Date(sign.initDate+"/"+currentYear);
+        const end = new Date(sign.endDate+"/"+currentYear);
+        console.log("date", date);
+        console.log("start", start);
+        console.log("end", end);
+        return date >= start && date <= end;
+      }
+    );
+    console.log(resultado);
   });
-  */
+  
 
 })();
