@@ -1,86 +1,30 @@
+import {predictions} from './data/predictions.js';
+import {colors} from './data/colors.js';
+import {luckyNumbers} from './data/luckyNumbers.js';
+import {luckyHours} from './data/luckyHours.js';
+import {dailyHoroscope} from './models/dailyHoroscope.js';
+
 (async () => {
 
   //Array de objetos signos zodiacales y sus pokemons
   const signs = [
-    { signName: "Aries", initDate:"21-03", endDate: "19-04", pokemons: [{"name": "blaziken"}], element:"Fire/Fuego" },
-    { signName: "Taurus", initDate:"20-04", endDate: "20-05", pokemons: [{"name": "tauros"}] , element:"Earth/Tierra"}, 
-    { signName: "Gemini", initDate:"21-05", endDate: "20-06", pokemons: [{"name": "plusle"}, {"name": "minun"}], element:"Air/Aire"},
-    { signName: "Cancer", initDate:"21-06", endDate: "22-07", pokemons: [{"name": "kingler"}], element:"Water/Agua"},
-    { signName: "Leo", initDate:"23-07", endDate: "22-08", pokemons: [{"name": "pyroar"}], element:"Fire/Fuego"},
-    { signName: "Virgo", initDate:"23-08", endDate: "22-09", pokemons: [{"name": "gardevoir"}],element:"Earth/Tierra"},
-    { signName: "Libra", initDate:"23-09", endDate: "22-10", pokemons: [{"name": "togekiss"}], element:"Air/Aire" },
-    { signName: "Scorpio", initDate:"23-10", endDate: "21-11", pokemons: [{"name": "drapion"}], element:"Water/Agua"},
-    { signName: "Sagittarius", initDate:"22-11", endDate: "21-12", pokemons: [{"name": "rapidash"}],element:"Fire/Fuego" },
-    { signName: "Capricorn", initDate:"22-12", endDate: "19-01", pokemons: [{"name": "gogoat"}],element:"Earth/Tierra"},
-    { signName: "Aquarius", initDate:"20-01", endDate: "18/-02", pokemons: [{"name": "vaporeon"}], element:"Air/Aire"},
-    { signName: "Pisces", initDate:"19-02", endDate: "20-03", pokemons: [{"name": "milotic"}] , element:"Water/Agua"}
+    { signName: "Aries", initDate:"21-03", endDate: "19-04", pokemons: [{"name": "blaziken"}], element:"Fuego" },
+    { signName: "Tauro", initDate:"20-04", endDate: "20-05", pokemons: [{"name": "tauros"}] , element:"Tierra"}, 
+    { signName: "Géminis", initDate:"21-05", endDate: "20-06", pokemons: [{"name": "plusle"}, {"name": "minun"}], element:"Aire"},
+    { signName: "Cáncer", initDate:"21-06", endDate: "22-07", pokemons: [{"name": "kingler"}], element:"Agua"},
+    { signName: "Leo", initDate:"23-07", endDate: "22-08", pokemons: [{"name": "pyroar"}], element:"Fuego"},
+    { signName: "Virgo", initDate:"23-08", endDate: "22-09", pokemons: [{"name": "gardevoir"}],element:"Tierra"},
+    { signName: "Libra", initDate:"23-09", endDate: "22-10", pokemons: [{"name": "togekiss"}], element:"Aire" },
+    { signName: "Escorpio", initDate:"23-10", endDate: "21-11", pokemons: [{"name": "drapion"}], element:"Agua"},
+    { signName: "Sagitario", initDate:"22-11", endDate: "21-12", pokemons: [{"name": "rapidash"}],element:"Fuego" },
+    { signName: "Capricornio", initDate:"22-12", endDate: "19-01", pokemons: [{"name": "gogoat"}],element:"Tierra"},
+    { signName: "Acuario", initDate:"20-01", endDate: "18/-02", pokemons: [{"name": "vaporeon"}], element:"Aire"},
+    { signName: "Piscis", initDate:"19-02", endDate: "20-03", pokemons: [{"name": "milotic"}] , element:"Agua"}
   ];
 
-  //Array de colores
-  const colors = [
-    "Red",
-    "Blue",
-    "Yellow",
-    "Green",
-    "Brown",
-    "Orange",
-    "Black",
-    "White",
-    "Purple",
-  ];
-
-  //Array de números
-  const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "69"];
-
-  //Array de horas
-  const hours = [
-    "12 am",
-    "1 am",
-    "2 am",
-    "3 am",
-    "4 am",
-    "5 am",
-    "6 am",
-    "7 am",
-    "8 am",
-    "9 am",
-    "10 am",
-    "11 am",
-    "12 pm",
-    "1 pm",
-    "2 pm",
-    "3 pm",
-    "4 pm",
-    "5 pm",
-    "6 pm",
-    "7 pm",
-    "8 pm",
-    "9 pm",
-    "10 pm",
-    "11 pm",
-  ];
-
-  //Permite obtener el horoscopo a través de un API que solicita signo y día
-  const getHoroscope = async (signName) => {
-    const URL = "https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=" +
-      signName +
-      "&day=TODAY";
-    let data;
-    try {
-      const response = await fetch(URL, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*"
-        }});
-      data = await response.json().horoscope_data;
-      
-    } catch (error) {
-      console.error("Error:", error);
-    } finally {
-      data = "You'll have a great time today!!!"
-    }
-    return data;
+  //Permite obtener el horoscopo del día
+  const getHoroscope = (signName) => {
+    return predictions.find(prediction => prediction.signName === signName).description;
   };
 
   //Permite obtener datos de un pokemon a través de un API que pide el nombre del pokemon
@@ -94,21 +38,6 @@
       console.error("Error:", error);
     }
     return data;
-  };
-
-  //Objeto de horoscopo diario vacío
-  const dailyHoroscope = {
-    signName: "",
-    currentDate: "",
-    initDate: "",
-    endDate: "",
-    element: "",
-    compatibility: "",
-    luckyNumber: "",
-    luckyTime: "",
-    color: "",
-    description: "",
-    pokemons: []
   };
 
   //Obtenemos el elemento botón consultar
@@ -178,8 +107,8 @@
   const makeLocalPredictions = (dailyHoroscope) => {
     dailyHoroscope.compatibility = signs[randomIntInRange(0, signs.length-1)].signName;
     dailyHoroscope.color = colors[randomIntInRange(0, colors.length-1)];
-    dailyHoroscope.luckyNumber = numbers[randomIntInRange(0, numbers.length-1)];
-    dailyHoroscope.luckyTime = hours[randomIntInRange(0, hours.length-1)];
+    dailyHoroscope.luckyNumber = luckyNumbers[randomIntInRange(0, luckyNumbers.length-1)];
+    dailyHoroscope.luckyTime = luckyHours[randomIntInRange(0, luckyHours.length-1)];
   }
 
   const renderPredictions = (dailyHoroscope) => {
