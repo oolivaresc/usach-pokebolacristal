@@ -9,12 +9,12 @@ import {dailyHoroscope} from './models/daily-horoscope.js';
 (async () => {
 
   //Obtenemos el elemento botón consultar
-  const btnDob = document.getElementById("consultButton");
+  const btnDob = document.getElementById("btnDob");
 
   //Agregamos el evento click para capturar cuando se hace click
   btnDob.addEventListener("click", async (event)=>{
-    const inputBirthDateValue = document.getElementById("birthDate").value;
-    
+    const inputBirthDateValue = document.getElementById("inputDob").value;
+    console.log(inputBirthDateValue)
     //Validaciones para la interfaz gráfica
     if(!inputBirthDateValue){
       alert("Debe ingresar la fecha de nacimiento")
@@ -22,24 +22,43 @@ import {dailyHoroscope} from './models/daily-horoscope.js';
     }
 
     //Capturamos los datos
-    const inputDay = inputBirthDateValue.split("-")[2];
-    const inputMonth = inputBirthDateValue.split("-")[1];
+    const inputDay = inputBirthDateValue.split("/")[0];
+    const inputMonth = inputBirthDateValue.split("/")[1] -1;
     const currentYear = new Date().getFullYear();
+    
+    console.log("inputDay", inputDay)
+    console.log("inputMonth", inputMonth)
+    console.log("currentYear", currentYear)
 
     //Creamos un objeto Date con los datos capturados
-    const inputDate = new Date(currentYear, inputMonth, inputDay);
+    //const inputDate = new Date(currentYear+"-"+inputMonth+"-"+inputDay);
+    const inputDate = new Date();
+    //Enero da problemas cuando más adelante se evalúa un rango de fechas
+    //Se aumenta el año en 1 para encontrar a Capricornio
+    inputDate.setFullYear((inputMonth===0)?currentYear+1:currentYear)
+    inputDate.setMonth(inputMonth);
+    inputDate.setDate(inputDay);
 
+    console.log("inputDate", inputDate)
     //Recorremos todos los signos para encontrar el ingresado en la página
     for(let i=0;i<zodiacSign.length;i++){
       //Separamos las fechas de los signos en cada día y mes de inicio y fin
-      const dayInitDate = zodiacSign[i].initDate.split("-")[0];
-      const monthInitDate = zodiacSign[i].initDate.split("-")[1];
-      const dayEndDate = zodiacSign[i].endDate.split("-")[0]
-      const monthEndDate = zodiacSign[i].endDate.split("-")[1]
+      const dayInitDate = zodiacSign[i].initDate.split("/")[0];
+      const monthInitDate = zodiacSign[i].initDate.split("/")[1] -1;
+      const dayEndDate = zodiacSign[i].endDate.split("/")[0];
+      const monthEndDate = zodiacSign[i].endDate.split("/")[1] -1;
 
       //Creamos dos objetos Date para luego hacer la evaluación
-      const start = new Date(currentYear, monthInitDate, dayInitDate);
-      const end = new Date(currentYear, monthEndDate, dayEndDate);
+      const start = new Date();
+      start.setFullYear(currentYear)
+      start.setMonth(monthInitDate);
+      start.setDate(dayInitDate);
+      const end = new Date();
+      end.setFullYear((monthInitDate>monthEndDate)?currentYear+1:currentYear)
+      end.setMonth(monthEndDate);
+      end.setDate(dayEndDate);
+      console.log("start", start)
+      console.log("end", end)
 
       //Si la fecha ingresada está dentro del rango del signo, guardamos los datos base
       if(inputDate >= start && inputDate <= end){
@@ -49,10 +68,11 @@ import {dailyHoroscope} from './models/daily-horoscope.js';
         dailyHoroscope.endDate = zodiacSign[i].endDate;
         dailyHoroscope.element = zodiacSign[i].element;
         dailyHoroscope.pokemons = zodiacSign[i].pokemons;
+        console.log("break!!!!!");
         break;
       }
     }
-
+    console.log("dailyHoroscope: ", dailyHoroscope)
     //Invoca a createHoroscope() para completar la predicción
     createHoroscope(dailyHoroscope);
 
