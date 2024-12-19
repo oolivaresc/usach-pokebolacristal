@@ -10,7 +10,7 @@
 <body>
     <!-- Navbar -->
     <header>
-        <nav>
+        <nav class="navbar">
             <h1>PokeHoróscopo - Tarot y Consejero Espiritual</h1>
         </nav>
     </header>
@@ -20,23 +20,22 @@
         <!-- Input para la fecha y botón consultar -->
         <section id="input-section">
             <h2>Ingresa tu fecha de nacimiento</h2>
-            <input type="date" id="birthDate" placeholder="DD-MM-YYYY">
-            <button id="consultButton">Consultar</button>
+            <input type="text" id="inputDob" placeholder="DD/MM/YYYY">
+            <button id="btnDob">Consultar</button>
         </section>
 
         <!-- Sección para mostrar los resultados -->
         <section id="results">
             <h3>Tu Horóscopo</h3>
             <p><strong>Signo:</strong> <span id="sign"></span></p>
-            <p><strong>Fecha Actual:</strong> <span id="date"></span></p>
-            <p><strong>Compatibilidad:</strong> <span id="compatibility"></span></p>
+            <p><strong>Elemento:</strong> <span id="element"></span></p>
             <p><strong>Número de la Suerte:</strong> <span id="luckyNumber"></span></p>
             <p><strong>Hora de la Suerte:</strong> <span id="luckyTime"></span></p>
             <p><strong>Color del Día:</strong> <span id="color"></span></p>
             <p><strong>Descripción:</strong> <span id="description"></span></p>
 
             <h3>Consejero Pokémon</h3>
-            <div id="pokemons" style="display: flex; gap: 10px;"></div>
+            <div id="pokemons" style="display: flex; gap: 10px; flex-wrap: wrap;"></div>
         </section>
     </main>
 
@@ -45,6 +44,7 @@
         <p>Creado por Baguetito-Corp 2024. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Enlace a tu archivo JS -->
     <script type="module" src="js/index.js"></script>
 </body>
 </html>
