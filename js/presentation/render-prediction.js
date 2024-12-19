@@ -1,6 +1,5 @@
 export const renderPredictions = (dailyHoroscope) => {
     const spanSign = document.getElementById("sign");
-    const spanDate = document.getElementById("date");
     const spanCompatibility = document.getElementById("compatibility");
     const spanLuckyNumber = document.getElementById("luckyNumber");
     const spanLuckyTime = document.getElementById("luckyTime");
@@ -8,7 +7,6 @@ export const renderPredictions = (dailyHoroscope) => {
     const spanDescription = document.getElementById("description");
 
     spanSign.innerHTML = "";
-    spanDate.innerHTML = "";
     spanCompatibility.innerHTML = "";
     spanLuckyNumber.innerHTML = "";
     spanLuckyTime.innerHTML = "";
@@ -16,7 +14,6 @@ export const renderPredictions = (dailyHoroscope) => {
     spanDescription.innerHTML = "";
 
     spanSign.innerHTML = dailyHoroscope.signName;
-    spanDate.innerHTML = dailyHoroscope.currentDate;
     spanCompatibility.innerHTML = dailyHoroscope.compatibility;
     spanLuckyNumber.innerHTML = dailyHoroscope.luckyNumber;
     spanLuckyTime.innerHTML = dailyHoroscope.luckyTime;
