@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "HOLA",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "scss:compile": "sass sass/styles.scss css/styles.css"
   },
