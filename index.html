@@ -11,18 +11,22 @@
     <!-- Navbar -->
     <header>
         <nav class="navbar">
-            <div class="container-fluid">
+            <div class="navbar__container">
                 <div class="navbar__branding">
                     <a class="navbar__logo" href="#">
                         <img src="assets/img/LOGO.png" alt="Cat Café" class="navbar__logo-image" width="80" height="80">
                     </a>
-                    <h3>PokeHoróscopo - Tarot y Consejero Espiritual</h3>
+                </div>
+                <div>
+                    <h3>PokeHoróscopo</h3>
+                    <h4>Tarot y Consejero Espiritual</h3>
+
                 </div>
                 <button id="toggle-button" class="navbar__toggle" type="button">
                     <p class="navbar__icon" alt="Menu">☰</p>
                 </button>
                 <div class="navbar__menu" id="navbar-menu">
-                    <ul class="navbar__nav">
+                    <ul class="navbar__list">
                         <li class="nav__item">
                             <a class="navbar__link" href="#">Tarot Personalizado</a>
                         </li>
@@ -44,9 +48,9 @@
     <!-- Main -->
     <main>
         <!-- Input para la fecha y botón consultar -->
-        <section id="input-section">
+        <section id="input-container">
             <h2>Ingresa tu fecha de nacimiento</h2>
-            <input type="text" id="inputDob" placeholder="DD/MM/YYYY">
+            <input type="text" id="inputDob" placeholder="DD/MM/YYYY" clas="horoscope-input">
             <button id="btnDob">Consultar</button>
         </section>
 
@@ -68,9 +72,26 @@
     </main>
 
     <!-- Footer -->
-    <footer>
-        <p>Creado por Baguetito-Corp 2024. Todos los derechos reservados.</p>
-    </footer>
+
+    <footer class="footer">
+        <div class="footer__container">
+          <div class="footer__row">
+            <div class="footer__column">
+              <h3 class="footer__title">Contacto</h3>
+              <p class="footer__text">Teléfono +569 1234 1234</p>
+              <p class="footer__text">Email: pokehoroscop@gmail.com</p>
+            </div>
+            <div class="footer__column">
+              <h3 class="footer__title">Siguenos</h3>
+              <p class="footer__text">Facebook</p>
+              <p class="footer__text">Instagram</p>
+            </div>
+          </div>
+          <div class="footer__bottom">
+            <p class="footer__copyright">Creado por Baguetito-Corp 2024. Todos los derechos reservados</p>
+          </div>
+        </div>
+      </footer>
 
     <!-- Enlace a tu archivo JS -->
     <script type="module" src="js/index.js"></script>

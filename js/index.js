@@ -7,6 +7,14 @@ import {renderPredictions} from './presentation/render-prediction.js';
 import {dailyHoroscope} from './models/daily-horoscope.js';
 
 (async () => {
+  'use strict';
+
+  const toggleButton = document.querySelector('#toggle-button');
+  const navbarMenu = document.querySelector('#navbar-menu');
+
+  toggleButton.addEventListener('click', () =>{
+      navbarMenu.classList.toggle('navbar__menu--active');
+  });
 
   //Obtenemos el elemento botón consultar
   const btnDob = document.getElementById("btnDob");

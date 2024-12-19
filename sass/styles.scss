@@ -1,5 +1,4 @@
-@import "base/reset";
-@import "themes/variables";
-@import "modules/navbar";
-@import "modules/main";
-@import "modules/footer";
+@use "base/reset";
+@use "modules/navbar";
+@use "modules/main";
+@use "modules/footer";
