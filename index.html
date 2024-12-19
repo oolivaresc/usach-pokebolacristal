@@ -11,7 +11,33 @@
     <!-- Navbar -->
     <header>
         <nav class="navbar">
-            <h1>PokeHoróscopo - Tarot y Consejero Espiritual</h1>
+            <div class="container-fluid">
+                <div class="navbar__branding">
+                    <a class="navbar__logo" href="#">
+                        <img src="assets/img/LOGO.png" alt="Cat Café" class="navbar__logo-image" width="80" height="80">
+                    </a>
+                    <h3>PokeHoróscopo - Tarot y Consejero Espiritual</h3>
+                </div>
+                <button id="toggle-button" class="navbar__toggle" type="button">
+                    <p class="navbar__icon" alt="Menu">☰</p>
+                </button>
+                <div class="navbar__menu" id="navbar-menu">
+                    <ul class="navbar__nav">
+                        <li class="nav__item">
+                            <a class="navbar__link" href="#">Tarot Personalizado</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="navbar__link" href="#">Lectura de Carta Astral</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="navbar__link" href="#">Reclamos y Sugerencias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="navbar__link" href="#">Otros Servicios</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -37,6 +63,7 @@
             <h3>Consejero Pokémon</h3>
             <div id="pokemons" style="display: flex; gap: 10px; flex-wrap: wrap;"></div>
         </section>
+    </div>
     </main>
 
     <!-- Footer -->
