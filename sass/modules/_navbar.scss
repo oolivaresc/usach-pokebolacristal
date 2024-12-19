@@ -1,18 +1,19 @@
 
 /* Variables */
-$primary-color: #orange;
+$primary-color: #130b06;
 $secondary-color: #ff6600;
 $hover-color: #ffcc00;
-$text-color: white;
-$link-hover-bg: #033f7a;
-$link-active-color: #020733;
+$text-color: navy;
+$link-hover-bg: rgb(155, 60, 155);
+$link-active-color: white;
 
 /* Global navbar styles */
 .navbar {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 2rem 3rem;
 
   .menu-container {
     .menu-button {
