@@ -1,13 +1,10 @@
-import {colors} from './data/colors.js';
-import {luckyNumbers} from './data/lucky-numbers.js';
-import {luckyHours} from './data/lucky-hours.js';
+
 import {zodiacSign} from './data/zodiac-sign.js';
-import {getHoroscope} from './repositories/horoscope-repository.js';
+import {createHoroscope} from './use-cases/create-horoscope.js';
 import {getPokemon} from './services/pokemon.js';
 import {renderPokemon} from './presentation/render-pokemon.js';
 import {renderPredictions} from './presentation/render-prediction.js';
 import {dailyHoroscope} from './models/daily-horoscope.js';
-import {randomIntInRange} from './utils/util.js';
 
 (async () => {
 
@@ -56,9 +53,8 @@ import {randomIntInRange} from './utils/util.js';
       }
     }
 
-    //Invoca a getHoroscope() usando el signo encontrado
-    const data = getHoroscope(dailyHoroscope.signName);
-    dailyHoroscope.description = data;
+    //Invoca a createHoroscope() para completar la predicción
+    createHoroscope(dailyHoroscope);
 
     //Invoca a getPokemon() por cada pokemon del signo
     dailyHoroscope.pokemons.forEach(async pokemon => {
@@ -68,15 +64,7 @@ import {randomIntInRange} from './utils/util.js';
       pokemon.image = data.sprites.front_default;
       renderPokemon(pokemon);
     });
-    makeLocalPredictions(dailyHoroscope);
     renderPredictions(dailyHoroscope);
   });
-
-  const makeLocalPredictions = (dailyHoroscope) => {
-    dailyHoroscope.compatibility = zodiacSign[randomIntInRange(0, zodiacSign.length-1)].signName;
-    dailyHoroscope.color = colors[randomIntInRange(0, colors.length-1)];
-    dailyHoroscope.luckyNumber = luckyNumbers[randomIntInRange(0, luckyNumbers.length-1)];
-    dailyHoroscope.luckyTime = luckyHours[randomIntInRange(0, luckyHours.length-1)];
-  }
 
 })();
