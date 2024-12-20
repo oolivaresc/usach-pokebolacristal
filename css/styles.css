@@ -15,13 +15,25 @@ h3 {
   font-size: 1.2rem;
   font-weight: bold;
   margin: 0;
-  color: #f9f9f9;
+  color: #f30606;
 }
 
 h4 {
   font-weight: bold;
   margin: 0;
-  color: #f9f9f9;
+  color: #f30606;
+}
+
+h1 {
+  font-weight: bold;
+  margin: 0;
+  color: #fdfafa;
+}
+
+h2 {
+  font-weight: lighter;
+  margin: 0;
+  color: #fdfafa;
 }
 
 .navbar {
@@ -63,14 +75,16 @@ h4 {
 
 .navbar__link {
   text-decoration: none;
-  color: #f9f9f9;
+  color: #fdfafa;
   padding: 0.5rem 1rem;
   transition: background-color 0.3s;
 }
 
 .navbar__link:hover {
-  background-color: #ffcc00;
+  background-color: #f8b2b1;
+  color: #0c0000;
   border-radius: 4px;
+  font-weight: bold;
 }
 
 .navbar__link--active {
@@ -101,7 +115,7 @@ h4 {
   .navbar__toggle {
     display: block;
     grid-column-start: 3;
-    color: #f9f9f9;
+    color: #f30606;
   }
   .carousel__control {
     padding: 0.5rem;
