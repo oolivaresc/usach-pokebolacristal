@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <!-- Enlace a tu archivo CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <!-- Navbar -->
     <header>
@@ -28,10 +30,10 @@
                 <div class="navbar__menu" id="navbar-menu">
                     <ul class="navbar__list">
                         <li class="nav__item">
-                            <a class="navbar__link" href="#horoscope-services">Servicios</a>
+                            <a class="navbar__link" href="#input-container">Horóscopo</a>
                         </li>
                         <li class="nav__item">
-                            <a class="navbar__link" href="#horoscope-reclamos">Reclamos</a>
+                            <a class="navbar__link" href="#horoscope-services">Servicios</a>
                         </li>
                         <li class="nav__item">
                             <a class="navbar__link" href="#footer__contact">Contacto</a>
@@ -44,77 +46,92 @@
 
     <!-- Main -->
     <main class="main">
-        <section id="imagen-principal" class="main__section--image"><img src="/assets/img/preview.webp"></section>
-        <!-- Input para la fecha y botón consultar -->
-        <section id="input-container" class="main__section main__section--dob">
-            <h3>Ingresa tu fecha de nacimiento</h3>
-            <input type="date" id="inputDob" class="input-horoscope">
-            <button id="btn-dob" class="main__section__btn--consultar-active">Consultar</button>
-            <button id="btn-new-prediction" class="main__section__btn--nuevo-disabled">Nueva consulta</button>
-        </section>
-        
-        <!-- Sección para mostrar los resultados -->
-        <section id="horoscope-results" class="main__section main__section--horoscope-disabled">
-            <h3>Tu Horóscopo</h3>
-            <p><strong>Signo:</strong> <span id="sign"></span></p>
-            <p><strong>Elemento:</strong> <span id="element"></span></p>
-            <p><strong>Compatibilidad:</strong> <span id="compatibility"></span></p>
-            <p><strong>Número de la Suerte:</strong> <span id="luckyNumber"></span></p>
-            <p><strong>Hora de la Suerte:</strong> <span id="luckyTime"></span></p>
-            <p><strong>Color del Día:</strong> <span id="color"></span></p>
-            <p><strong>Descripción:</strong> <span id="description"></span></p>
-
-            <h3>Consejero Pokémon</h3>
-            <div id="pokemons" class="main__section__pokemon"></div>
+        <section id="imagen-principal">
+            <img class="main__section--image" src="/assets/img/pokemon-main.png">
         </section>
 
-        <!-- Sección para mostrar los servicios -->
-        <section id="horoscope-services" class="main__section main__section--services">
-            <h3>Servicios Adicionales</h3>
-            <ul>
-                <li>Tarot</li>
-                <li>Carta astral</li>
-                <li>Medium</li>
-                <li>Talleres</li>
-                <li>Flores de bach</li>
-            </ul>
-        </section>
+        <div class="main__container">
 
-        <!-- Sección para mostrar los servicios -->
-        <section id="horoscope-services" class="main__section main__section--reclamos">
-            <h3>Soporte al cliente</h3>
-            <ul>
-                <li>Pago seguro</li>
-                <li>Tarifas</li>
-                <li>Política de privacidad</li>
-            </ul>
-        </section>
-    </div>
+            <!-- Input para la fecha y botón consultar -->
+            <section id="input-container" class="main__section main__section--welcome">
+                <h1 class="main__section_tittle">Poke-Horóscopo</h1>
+                <p>¡Descubre tu horóscopo pokemon! todos los días una nueva predicción</p>
+            </section>
+            <hr>
+            <!-- Input para la fecha y botón consultar -->
+            <section id="input-container" class="main__section main__section--dob">
+                <h1 class="main__section_tittle">Ingresa tu fecha de nacimiento</h1> 
+                <input type="date" id="inputDob" class="input-horoscope">
+                <button id="btn-dob" class="main__section__btn main__section__btn--consultar-active">Consultar</button>
+                <button id="btn-new-prediction" class="main__section__btn main__section__btn--nuevo-disabled">Nueva consulta</button>
+            </section>
+
+            <!-- Sección para mostrar los resultados -->
+            <section id="horoscope-results" class="main__section main__section--horoscope-disabled">
+                
+                <h1 class="main__section_tittle">Consejero Pokémon</h1>
+                <div id="pokemons" class="main__section__pokemon"></div>
+                
+                <div class="main__section__horoscope">
+                    <h3>Tu Horóscopo</h3>
+                    <p><strong>Signo:</strong> <span id="sign"></span></p>
+                    <p><strong>Elemento:</strong> <span id="element"></span></p>
+                    <p><strong>Compatibilidad:</strong> <span id="compatibility"></span></p>
+                    <p><strong>Número de la Suerte:</strong> <span id="luckyNumber"></span></p>
+                    <p><strong>Hora de la Suerte:</strong> <span id="luckyTime"></span></p>
+                    <p><strong>Color del Día:</strong> <span id="color"></span></p>
+                    <p><strong>Descripción:</strong> <span id="description"></span></p>
+                </div>
+            </section>
+
+            <hr>
+
+
+            <!-- Sección para mostrar los servicios -->
+            <section id="horoscope-services" class="main__section main__section--services">
+                <h1 class="main__section_tittle">Servicios</h1>
+                <ul>
+                    <li>Tarot</li>
+                    <li>Carta astral</li>
+                    <li>Medium</li>
+                    <li>Talleres</li>
+                    <li>Flores de bach</li>
+                </ul>
+            </section>
+
+        </div>
     </main>
 
     <!-- Footer -->
 
-    <footer class="footer">
+    <footer id="footer__contact" class="footer">
         <div class="footer footer__contact">
-          <div class="footer__row">
-            <div class="footer__column">
-              <h3 class="footer__title">Contacto</h3>
-              <p class="footer__text">Teléfono +56912341234</p>
-              <p class="footer__text">Email: pokehoroscop@gmail.com</p>
+            <div class="footer__row">
+                <div class="footer__column">
+                    <h3 class="footer__title">Contacto</h3>
+                    <p class="footer__text">Teléfono +56912341234</p>
+                    <p class="footer__text">Email: pokehoroscop@gmail.com</p>
+                </div>
+                <div class="footer__column">
+                    <h3 class="footer__title">Síguenos</h3>
+                    <a href="#"><img class="footer__icon" src="/assets/img/icon_face.jpeg" alt="Facebook">
+                        <p class="footer__text">Facebook</p>
+                    </a>
+                    <a href="#"><img class="footer__icon" src="/assets/img/Instagram-Logo-PNG-2018.png.webp"
+                            alt="Instagram">
+                        <p class="footer__text">Instagram</p>
+                    </a>
+                </div>
             </div>
-            <div class="footer__column">
-              <h3 class="footer__title">Síguenos</h3>
-              <a href="#"><img class="footer__icon" src="/assets/img/icon_face.jpeg" alt="Facebook"><p class="footer__text">Facebook</p></a>
-              <a href="#"><img class="footer__icon" src="/assets/img/Instagram-Logo-PNG-2018.png.webp" alt="Instagram"><p class="footer__text">Instagram</p></a>
+            <div class="footer__bottom">
+                <p class="footer__copyright">Creado con 💗 por Baguetito-Corp 2024. Copyright © 2024. Todos los derechos
+                    reservados.</p>
             </div>
-          </div>
-          <div class="footer__bottom">
-            <p class="footer__copyright">Creado con 💗 por Baguetito-Corp 2024. Copyright © 2024. Todos los derechos reservados.</p>
-          </div>
         </div>
-      </footer>
+    </footer>
 
     <!-- Enlace a tu archivo JS -->
     <script type="module" src="js/index.js"></script>
 </body>
+
 </html>

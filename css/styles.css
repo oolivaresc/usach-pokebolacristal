@@ -129,6 +129,23 @@ h2 {
     flex-direction: column;
   }
 }
+main .main__container {
+  background: #fff;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  margin: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+main .main__section--welcome {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem;
+  flex-direction: column;
+  align-items: center;
+}
+main .main__section_tittle {
+  color: #000;
+}
 main .main__section--dob {
   display: flex;
   justify-content: center;
@@ -147,13 +164,6 @@ main .main__section--horoscope-active {
   flex-direction: column;
   align-items: center;
 }
-main .main__section--reclamos {
-  display: flex;
-  justify-content: center;
-  margin: 2rem 6rem 2rem 6rem;
-  flex-direction: column;
-  align-items: center;
-}
 main .main__section--services {
   display: flex;
   justify-content: center;
@@ -161,8 +171,19 @@ main .main__section--services {
   flex-direction: column;
   align-items: center;
 }
+main .main__section__btn {
+  padding: 0.5rem;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ef5350;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 main .main__section__btn--consultar-active {
-  display: block;
+  display: inline-block;
 }
 main .main__section__btn--consultar-disabled {
   background-color: #ccc;
@@ -177,16 +198,25 @@ main .main__section__btn--nuevo-active {
   display: block;
 }
 main .main__section--image {
-  object-fit: cover;
   width: 100%;
   height: auto;
 }
 main .main__section__pokemon {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin: 1rem;
+}
+main .main__section__horoscope {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin: 1rem;
+  padding: 1rem;
 }
 main .horoscope-input {
   text-align: center;
@@ -264,7 +294,6 @@ main .results .pokemon-button:hover {
 .footer__row {
   display: flex;
   flex-wrap: wrap;
-  align-content: space-between;
   gap: 1rem;
   width: 100%;
   justify-content: center;
