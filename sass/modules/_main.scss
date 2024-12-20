@@ -1,17 +1,44 @@
-.main {
-    .hero-section {
+main {
+    .main__section--dob {
       display: flex;
       justify-content: center;
-      margin: 1rem 0;
-  
-      .image-placeholder {
-        width: 80%;
-        height: 200px;
-        background-color: #ccc;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+      gap: 1rem;
+      margin: 2rem;
+      flex-direction: column;
+      align-items: center;
+    }
+    .main__section--horoscope-disabled {
+      display: none;
+    }
+    .main__section--horoscope-active {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 6rem 2rem 6rem;
+      flex-direction: column;
+      align-items: center;
+    }
+    .main__section__btn--consultar-active  {
+      display: block;
+    }
+    .main__section__btn--consultar-disabled {
+      background-color: #ccc; 
+      color: #666;           
+      cursor: not-allowed;   
+      opacity: 0.7;          
+    }
+    .main__section__btn--nuevo-disabled {
+      display: none;
+    }
+    .main__section__btn--nuevo-active {
+      display: block;
+    }
+
+    .main__section__pokemon {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
     }
   
     .horoscope-input {

@@ -17,26 +17,28 @@ import {dailyHoroscope} from './models/daily-horoscope.js';
   });
 
   //Obtenemos el elemento botón consultar
-  const btnDob = document.getElementById("btnDob");
+  const btnDob = document.getElementById("btn-dob");
 
   //Agregamos el evento click para capturar cuando se hace click
   btnDob.addEventListener("click", async (event)=>{
+    console.log(btnDob.className);
+    //Si el botón está desactivado, no hacer nada
+    if(btnDob.className === 'main__section__btn--consultar-disabled'){
+      return;
+    }
+
     const inputBirthDateValue = document.getElementById("inputDob").value;
-    console.log(inputBirthDateValue)
-    //Validaciones para la interfaz gráfica
+
+    //Validaciones para el input fecha
     if(!inputBirthDateValue){
       alert("Debe ingresar la fecha de nacimiento")
       return;
     }
 
     //Capturamos los datos
-    const inputDay = inputBirthDateValue.split("/")[0];
-    const inputMonth = inputBirthDateValue.split("/")[1] -1;
+    const inputDay = inputBirthDateValue.split("-")[2];
+    const inputMonth = inputBirthDateValue.split("-")[1] -1;
     const currentYear = new Date().getFullYear();
-    
-    console.log("inputDay", inputDay)
-    console.log("inputMonth", inputMonth)
-    console.log("currentYear", currentYear)
 
     //Creamos un objeto Date con los datos capturados
     //const inputDate = new Date(currentYear+"-"+inputMonth+"-"+inputDay);
@@ -47,14 +49,13 @@ import {dailyHoroscope} from './models/daily-horoscope.js';
     inputDate.setMonth(inputMonth);
     inputDate.setDate(inputDay);
 
-    console.log("inputDate", inputDate)
     //Recorremos todos los signos para encontrar el ingresado en la página
     for(let i=0;i<zodiacSign.length;i++){
       //Separamos las fechas de los signos en cada día y mes de inicio y fin
-      const dayInitDate = zodiacSign[i].initDate.split("/")[0];
-      const monthInitDate = zodiacSign[i].initDate.split("/")[1] -1;
-      const dayEndDate = zodiacSign[i].endDate.split("/")[0];
-      const monthEndDate = zodiacSign[i].endDate.split("/")[1] -1;
+      const dayInitDate = zodiacSign[i].initDate.split("-")[0];
+      const monthInitDate = zodiacSign[i].initDate.split("-")[1] -1;
+      const dayEndDate = zodiacSign[i].endDate.split("-")[0];
+      const monthEndDate = zodiacSign[i].endDate.split("-")[1] -1;
 
       //Creamos dos objetos Date para luego hacer la evaluación
       const start = new Date();
@@ -65,8 +66,6 @@ import {dailyHoroscope} from './models/daily-horoscope.js';
       end.setFullYear((monthInitDate>monthEndDate)?currentYear+1:currentYear)
       end.setMonth(monthEndDate);
       end.setDate(dayEndDate);
-      console.log("start", start)
-      console.log("end", end)
 
       //Si la fecha ingresada está dentro del rango del signo, guardamos los datos base
       if(inputDate >= start && inputDate <= end){
@@ -76,11 +75,9 @@ import {dailyHoroscope} from './models/daily-horoscope.js';
         dailyHoroscope.endDate = zodiacSign[i].endDate;
         dailyHoroscope.element = zodiacSign[i].element;
         dailyHoroscope.pokemons = zodiacSign[i].pokemons;
-        console.log("break!!!!!");
         break;
       }
     }
-    console.log("dailyHoroscope: ", dailyHoroscope)
     //Invoca a createHoroscope() para completar la predicción
     createHoroscope(dailyHoroscope);
 
@@ -93,6 +90,30 @@ import {dailyHoroscope} from './models/daily-horoscope.js';
       renderPokemon(pokemon);
     });
     renderPredictions(dailyHoroscope);
+
+  });
+
+  //Obtenemos el elemento botón nueva consulta
+  const btnNew = document.getElementById("btn-new-prediction");
+  //Agregamos el evento click para capturar cuando se hace click
+  btnNew.addEventListener("click", async (event)=>{
+     //Desactivamos el section con el resultado
+     const horoscopeResults = document.getElementById("horoscope-results");
+     horoscopeResults.classList.remove('main__section--horoscope-active');
+     horoscopeResults.classList.add('main__section--horoscope-disabled');
+ 
+     //Activamos el botón consulta
+     const btnDob = document.getElementById("btn-dob");
+     btnDob.classList.remove('main__section__btn--consultar-disabled');
+     btnDob.classList.add('main__section__btn--consultar-active');
+     
+     //Desactivamos el botón de nueva consulta
+     const btnNewPrediction = document.getElementById("btn-new-prediction");
+     btnNewPrediction.classList.remove('main__section__btn--nuevo-active');
+     btnNewPrediction.classList.add('main__section__btn--nuevo-disabled');
+
+     const divPokemons = document.getElementById("pokemons");
+     divPokemons.innerHTML = "";
   });
 
 })();

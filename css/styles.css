@@ -110,75 +110,102 @@ h4 {
     flex-direction: column;
   }
 }
-.main .hero-section {
+main .main__section--dob {
   display: flex;
   justify-content: center;
-  margin: 1rem 0;
-}
-.main .hero-section .image-placeholder {
-  width: 80%;
-  height: 200px;
-  background-color: #ccc;
-  display: flex;
+  gap: 1rem;
+  margin: 2rem;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
-.main .horoscope-input {
+main .main__section--horoscope-disabled {
+  display: none;
+}
+main .main__section--horoscope-active {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 6rem 2rem 6rem;
+  flex-direction: column;
+  align-items: center;
+}
+main .main__section__btn--consultar-active {
+  display: block;
+}
+main .main__section__btn--consultar-disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+main .main__section__btn--nuevo-disabled {
+  display: none;
+}
+main .main__section__btn--nuevo-active {
+  display: block;
+}
+main .main__section__pokemon {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+main .horoscope-input {
   text-align: center;
   margin: 1rem 0;
 }
-.main .horoscope-input .input-container {
+main .horoscope-input .input-container {
   display: flex;
   justify-content: center;
   gap: 1rem;
   margin-top: 0.5rem;
 }
-.main .horoscope-input .input-container input, .main .horoscope-input .input-container button {
+main .horoscope-input .input-container input, main .horoscope-input .input-container button {
   padding: 0.5rem 1rem;
 }
-.main .horoscope-input .input-container button {
+main .horoscope-input .input-container button {
   background-color: #ff6600;
   color: white;
   border: none;
   cursor: pointer;
 }
-.main .horoscope-input .input-container button:hover {
+main .horoscope-input .input-container button:hover {
   background-color: #ffcc00;
 }
-.main .results {
+main .results {
   text-align: center;
 }
-.main .results .buttons-container {
+main .results .buttons-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
 }
-.main .results .buttons-container button {
+main .results .buttons-container button {
   padding: 0.5rem 1rem;
   background-color: #666;
   color: white;
   border: none;
   cursor: pointer;
 }
-.main .results .buttons-container button:hover {
+main .results .buttons-container button:hover {
   background-color: #444;
 }
-.main .results .result-card {
+main .results .result-card {
   background: #fff;
   padding: 1rem;
   margin: 1rem auto;
   width: 80%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
-.main .results .pokemon-button {
+main .results .pokemon-button {
   background-color: #0078e7;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
-.main .results .pokemon-button:hover {
+main .results .pokemon-button:hover {
   background-color: #005bb5;
 }
 

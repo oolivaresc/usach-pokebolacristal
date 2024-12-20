@@ -4,11 +4,8 @@ export const renderPokemon = async(pokemon) => {
     //divPokemons.querySelectorAll(".card").forEach((element)=>{
     //  divPokemons.removeChild(element);
     //})
-    const card = document.createElement("div");
-    card.classList.add("card");
-    card.innerHTML = `
+    divPokemons.innerHTML = `
         <img src="${pokemon.image}" alt="${pokemon.name}">
         <p>${pokemon.name}</p>
     `;
-    divPokemons.appendChild(card);
   }

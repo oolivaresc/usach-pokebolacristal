@@ -14,7 +14,7 @@
             <div class="navbar__container">
                 <div class="navbar__branding">
                     <a class="navbar__logo" href="#">
-                        <img src="assets/img/LOGO.png" alt="Cat Café" class="navbar__logo-image" width="80" height="80">
+                        <img src="assets/img/LOGO.png" alt="PokeHoróscopo" class="navbar__logo-image" width="80" height="80">
                     </a>
                 </div>
                 <div>
@@ -28,16 +28,13 @@
                 <div class="navbar__menu" id="navbar-menu">
                     <ul class="navbar__list">
                         <li class="nav__item">
-                            <a class="navbar__link" href="#">Tarot Personalizado</a>
+                            <a class="navbar__link" href="#horoscope-services">Servicios</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="navbar__link" href="#">Lectura de Carta Astral</a>
+                        <li class="nav__item">
+                            <a class="navbar__link" href="#horoscope-reclamos">Reclamos</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="navbar__link" href="#">Reclamos y Sugerencias</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="navbar__link" href="#">Otros Servicios</a>
+                        <li class="nav__item">
+                            <a class="navbar__link" href="#footer__contact">Contacto</a>
                         </li>
                     </ul>
                 </div>
@@ -46,17 +43,18 @@
     </header>
 
     <!-- Main -->
-    <main>
+    <main class="main">
         <!-- Input para la fecha y botón consultar -->
-        <section id="input-container">
+        <section id="input-container" class="main__section main__section--dob">
             <h2>Ingresa tu fecha de nacimiento</h2>
-            <input type="text" id="inputDob" placeholder="DD/MM/YYYY" clas="horoscope-input">
-            <button id="btnDob">Consultar</button>
+            <input type="date" id="inputDob" class="input-horoscope">
+            <button id="btn-dob" class="main__section__btn--consultar-active">Consultar</button>
+            <button id="btn-new-prediction" class="main__section__btn--nuevo-disabled">Nueva consulta</button>
         </section>
-
+        
         <!-- Sección para mostrar los resultados -->
-        <section id="results">
-            <h3>Tu Horóscopo</h3>
+        <section id="horoscope-results" class="main__section main__section--horoscope-disabled">
+            <h2>Tu Horóscopo</h2>
             <p><strong>Signo:</strong> <span id="sign"></span></p>
             <p><strong>Elemento:</strong> <span id="element"></span></p>
             <p><strong>Compatibilidad:</strong> <span id="compatibility"></span></p>
@@ -66,7 +64,29 @@
             <p><strong>Descripción:</strong> <span id="description"></span></p>
 
             <h3>Consejero Pokémon</h3>
-            <div id="pokemons" style="display: flex; gap: 10px; flex-wrap: wrap;"></div>
+            <div id="pokemons" class="main__section__pokemon"></div>
+        </section>
+
+        <!-- Sección para mostrar los servicios -->
+        <section id="horoscope-services" class="main__section main__section--services">
+            <h2>Servicios adicionales</h2>
+            <ul>
+                <li>Tarot</li>
+                <li>Carta astral</li>
+                <li>Medium</li>
+                <li>Talleres</li>
+                <li>Flores de bach</li>
+            </ul>
+        </section>
+
+        <!-- Sección para mostrar los servicios -->
+        <section id="horoscope-services" class="main__section main__section--reclamos">
+            <h2>Soporte al cliente</h2>
+            <ul>
+                <li>Pago seguro</li>
+                <li>Tarifas</li>
+                <li>Política de privacidad</li>
+            </ul>
         </section>
     </div>
     </main>
@@ -74,7 +94,7 @@
     <!-- Footer -->
 
     <footer class="footer">
-        <div class="footer__container">
+        <div class="footer footer__contact">
           <div class="footer__row">
             <div class="footer__column">
               <h3 class="footer__title">Contacto</h3>
@@ -88,7 +108,7 @@
             </div>
           </div>
           <div class="footer__bottom">
-            <p class="footer__copyright">Creado por Baguetito-Corp 2024. Todos los derechos reservados</p>
+            <p class="footer__copyright">Creado por Baguetito-Corp 2024. Copyright © 2024 Todos los derechos reservados</p>
           </div>
         </div>
       </footer>
