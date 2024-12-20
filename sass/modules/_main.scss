@@ -17,6 +17,20 @@ main {
       flex-direction: column;
       align-items: center;
     }
+    .main__section--reclamos {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 6rem 2rem 6rem;
+      flex-direction: column;
+      align-items: center;
+    }
+    .main__section--services{
+      display: flex;
+      justify-content: center;
+      margin: 2rem 6rem 2rem 6rem;
+      flex-direction: column;
+      align-items: center;
+    }
     .main__section__btn--consultar-active  {
       display: block;
     }
@@ -31,6 +45,13 @@ main {
     }
     .main__section__btn--nuevo-active {
       display: block;
+    }
+    .main__section--image{
+      
+      object-fit:cover;
+      width: 100%;
+      height: auto;
+
     }
 
     .main__section__pokemon {

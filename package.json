@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "scss:compile": "sass sass/styles.scss css/styles.css"
+    "scss:compile": "sass sass/styles.scss css/styles.css --watch"
   },
   "keywords": [],
   "author": "",

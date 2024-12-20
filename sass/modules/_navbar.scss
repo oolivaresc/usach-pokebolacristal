@@ -20,6 +20,10 @@
   width: 3rem;
   height: 3rem;
 }
+.navbar__logo-image {
+  width: 80px;
+  height: 80px;
+}
 
 .navbar__toggle {
   display: none;
@@ -39,14 +43,16 @@
 
 .navbar__link {
   text-decoration: none;
-  color: variables.$background-light;
+  color: variables.$blanquito;
   padding: 0.5rem 1rem;
   transition: background-color 0.3s;
 }
 
 .navbar__link:hover {
-  background-color: variables.$secondary-color;
+  background-color: variables.$colorbc-links;
+  color: variables.$oscurito;
   border-radius: 4px;
+  font-weight: bold;
 }
 
 .navbar__link--active {

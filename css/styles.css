@@ -15,13 +15,25 @@ h3 {
   font-size: 1.2rem;
   font-weight: bold;
   margin: 0;
-  color: #f9f9f9;
+  color: #f30606;
 }
 
 h4 {
   font-weight: bold;
   margin: 0;
-  color: #f9f9f9;
+  color: #f30606;
+}
+
+h1 {
+  font-weight: bold;
+  margin: 0;
+  color: #fdfafa;
+}
+
+h2 {
+  font-weight: lighter;
+  margin: 0;
+  color: #fdfafa;
 }
 
 .navbar {
@@ -45,6 +57,11 @@ h4 {
   height: 3rem;
 }
 
+.navbar__logo-image {
+  width: 80px;
+  height: 80px;
+}
+
 .navbar__toggle {
   display: none;
   background: none;
@@ -63,14 +80,16 @@ h4 {
 
 .navbar__link {
   text-decoration: none;
-  color: #f9f9f9;
+  color: #fdfafa;
   padding: 0.5rem 1rem;
   transition: background-color 0.3s;
 }
 
 .navbar__link:hover {
-  background-color: #ffcc00;
+  background-color: #f8b2b1;
+  color: #0c0000;
   border-radius: 4px;
+  font-weight: bold;
 }
 
 .navbar__link--active {
@@ -101,7 +120,7 @@ h4 {
   .navbar__toggle {
     display: block;
     grid-column-start: 3;
-    color: #f9f9f9;
+    color: #f30606;
   }
   .carousel__control {
     padding: 0.5rem;
@@ -128,6 +147,20 @@ main .main__section--horoscope-active {
   flex-direction: column;
   align-items: center;
 }
+main .main__section--reclamos {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 6rem 2rem 6rem;
+  flex-direction: column;
+  align-items: center;
+}
+main .main__section--services {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 6rem 2rem 6rem;
+  flex-direction: column;
+  align-items: center;
+}
 main .main__section__btn--consultar-active {
   display: block;
 }
@@ -142,6 +175,11 @@ main .main__section__btn--nuevo-disabled {
 }
 main .main__section__btn--nuevo-active {
   display: block;
+}
+main .main__section--image {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
 }
 main .main__section__pokemon {
   display: flex;
@@ -226,10 +264,10 @@ main .results .pokemon-button:hover {
 .footer__row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  align-content: space-between;
   gap: 1rem;
-  max-width: 1200px;
   width: 100%;
+  justify-content: center;
 }
 
 .footer__column {
@@ -256,6 +294,11 @@ main .results .pokemon-button:hover {
 
 .footer__copyright {
   font-size: 0.875rem;
+}
+
+.footer__icon {
+  width: 20px;
+  height: 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */

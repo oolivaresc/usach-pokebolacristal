@@ -41,10 +41,9 @@ import {dailyHoroscope} from './models/daily-horoscope.js';
     const currentYear = new Date().getFullYear();
 
     //Creamos un objeto Date con los datos capturados
-    //const inputDate = new Date(currentYear+"-"+inputMonth+"-"+inputDay);
     const inputDate = new Date();
     //Enero da problemas cuando más adelante se evalúa un rango de fechas
-    //Se aumenta el año en 1 para encontrar a Capricornio
+    //Se aumenta el año en 1 para encontrar a Capricornio solo porque es perfecto
     inputDate.setFullYear((inputMonth===0)?currentYear+1:currentYear)
     inputDate.setMonth(inputMonth);
     inputDate.setDate(inputDay);
@@ -77,6 +76,7 @@ import {dailyHoroscope} from './models/daily-horoscope.js';
         dailyHoroscope.pokemons = zodiacSign[i].pokemons;
         break;
       }
+      
     }
     //Invoca a createHoroscope() para completar la predicción
     createHoroscope(dailyHoroscope);
