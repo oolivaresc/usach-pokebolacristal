@@ -15,12 +15,12 @@
 }
 
 .footer__row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1rem;
-  max-width: 1200px;
-  width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
 }
 
 .footer__column {
@@ -47,4 +47,9 @@
 
 .footer__copyright {
   font-size: 0.875rem;
+}
+
+.footer__icon{
+width: 20px;
+height: 20px;
 }

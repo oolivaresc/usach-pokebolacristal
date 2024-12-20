@@ -14,7 +14,7 @@
             <div class="navbar__container">
                 <div class="navbar__branding">
                     <a class="navbar__logo" href="#">
-                        <img src="assets/img/LOGO.png" alt="PokeHoróscopo" class="navbar__logo-image" width="80" height="80">
+                        <img src="assets/img/LOGO.png" alt="PokeHoróscopo" class="navbar__logo-image">
                     </a>
                 </div>
                 <div>
@@ -44,9 +44,10 @@
 
     <!-- Main -->
     <main class="main">
+        <section id="imagen-principal" class="main__section--image"><img src="/assets/img/preview.webp"></section>
         <!-- Input para la fecha y botón consultar -->
         <section id="input-container" class="main__section main__section--dob">
-            <h2>Ingresa tu fecha de nacimiento</h2>
+            <h3>Ingresa tu fecha de nacimiento</h3>
             <input type="date" id="inputDob" class="input-horoscope">
             <button id="btn-dob" class="main__section__btn--consultar-active">Consultar</button>
             <button id="btn-new-prediction" class="main__section__btn--nuevo-disabled">Nueva consulta</button>
@@ -69,7 +70,7 @@
 
         <!-- Sección para mostrar los servicios -->
         <section id="horoscope-services" class="main__section main__section--services">
-            <h2>Servicios adicionales</h2>
+            <h3>Servicios Adicionales</h3>
             <ul>
                 <li>Tarot</li>
                 <li>Carta astral</li>
@@ -81,7 +82,7 @@
 
         <!-- Sección para mostrar los servicios -->
         <section id="horoscope-services" class="main__section main__section--reclamos">
-            <h2>Soporte al cliente</h2>
+            <h3>Soporte al cliente</h3>
             <ul>
                 <li>Pago seguro</li>
                 <li>Tarifas</li>
@@ -98,17 +99,17 @@
           <div class="footer__row">
             <div class="footer__column">
               <h3 class="footer__title">Contacto</h3>
-              <p class="footer__text">Teléfono +569 1234 1234</p>
+              <p class="footer__text">Teléfono +56912341234</p>
               <p class="footer__text">Email: pokehoroscop@gmail.com</p>
             </div>
             <div class="footer__column">
-              <h3 class="footer__title">Siguenos</h3>
-              <p class="footer__text">Facebook</p>
-              <p class="footer__text">Instagram</p>
+              <h3 class="footer__title">Síguenos</h3>
+              <a href="#"><img class="footer__icon" src="/assets/img/icon_face.jpeg" alt="Facebook"><p class="footer__text">Facebook</p></a>
+              <a href="#"><img class="footer__icon" src="/assets/img/Instagram-Logo-PNG-2018.png.webp" alt="Instagram"><p class="footer__text">Instagram</p></a>
             </div>
           </div>
           <div class="footer__bottom">
-            <p class="footer__copyright">Creado por Baguetito-Corp 2024. Copyright © 2024 Todos los derechos reservados</p>
+            <p class="footer__copyright">Creado con 💗 por Baguetito-Corp 2024. Copyright © 2024. Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>
