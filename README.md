@@ -1,2 +1,4 @@
 # usach-pokebolacristal
-HOLA
+
+# Comando SASS
+npm run scss:compile
