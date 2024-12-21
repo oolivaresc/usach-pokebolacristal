@@ -19,10 +19,8 @@
                         <img src="assets/img/LOGO.png" alt="PokeHoróscopo" class="navbar__logo-image">
                     </a>
                 </div>
-                <div>
+                <div class="navbar__tittle">
                     <h1>PokeHoróscopo</h1>
-                    <h2>Tarot y Consejero Espiritual</h2>
-
                 </div>
                 <button id="toggle-button" class="navbar__toggle" type="button">
                     <p class="navbar__icon" alt="Menu">☰</p>
@@ -47,58 +45,63 @@
     <!-- Main -->
     <main class="main">
         <section id="imagen-principal">
-            <img class="main__section--image" src="/assets/img/pokemon-main.png">
+            <img class="main__section__image--primary" src="/assets/img/pokemon-main.png">
         </section>
 
         <div class="main__container">
 
             <!-- Input para la fecha y botón consultar -->
-            <section id="input-container" class="main__section main__section--welcome">
-                <h1 class="main__section_tittle">Poke-Horóscopo</h1>
-                <p>¡Descubre tu horóscopo pokemon! todos los días una nueva predicción</p>
+            <section class="main__section">
+                <h1 class="main__section_tittle">PokeHoróscopo</h1>
+                <h3 class="main__section_tittle">Tarot y Consejero Espiritual</h3>
+                <p class="main_section_p">Descubre tu horóscopo pokemon. ¡Todos los días una nueva predicción totalmetne gratis!</p>
             </section>
-            <hr>
             <!-- Input para la fecha y botón consultar -->
-            <section id="input-container" class="main__section main__section--dob">
-                <h1 class="main__section_tittle">Ingresa tu fecha de nacimiento</h1> 
+            <section id="input-container" class="main__section">
+                <h4 class="main__section_tittle">Ingresa tu fecha de nacimiento</h4> 
                 <input type="date" id="inputDob" class="input-horoscope">
-                <button id="btn-dob" class="main__section__btn main__section__btn--consultar-active">Consultar</button>
-                <button id="btn-new-prediction" class="main__section__btn main__section__btn--nuevo-disabled">Nueva consulta</button>
-            </section>
+                <div class="main__section__buttons">
+                    <button id="btn-dob" class="main__section__btn main__section__btn--consultar-active">Consultar</button>
+                    <button id="btn-new-prediction" class="main__section__btn main__section__btn--nuevo-disabled">Nueva consulta</button>    
+                </div>
+                </section>
 
             <!-- Sección para mostrar los resultados -->
-            <section id="horoscope-results" class="main__section main__section--horoscope-disabled">
-                
-                <h1 class="main__section_tittle">Consejero Pokémon</h1>
-                <div id="pokemons" class="main__section__pokemon"></div>
+            <section id="horoscope-results" class="main__section main__section-disabled">
                 
                 <div class="main__section__horoscope">
-                    <h3>Tu Horóscopo</h3>
-                    <p><strong>Signo:</strong> <span id="sign"></span></p>
-                    <p><strong>Elemento:</strong> <span id="element"></span></p>
-                    <p><strong>Compatibilidad:</strong> <span id="compatibility"></span></p>
-                    <p><strong>Número de la Suerte:</strong> <span id="luckyNumber"></span></p>
-                    <p><strong>Hora de la Suerte:</strong> <span id="luckyTime"></span></p>
-                    <p><strong>Color del Día:</strong> <span id="color"></span></p>
-                    <p><strong>Descripción:</strong> <span id="description"></span></p>
+                    <h3>Consejero Pokemon</h3>
+                    <div id="pokemons" class="main__section__pokemon"></div>
+                    <p class="main_section_p"><strong id="consejero-pokemon"></strong> <span id="description"></span></p>
+                    <p class="main_section_p"><strong>Signo:</strong> <span id="sign"></span></p>
+                    <p class="main_section_p"><strong>Elemento:</strong> <span id="element"></span></p>
+                    <p class="main_section_p"><strong>Compatibilidad:</strong> <span id="compatibility"></span></p>
+                    <p class="main_section_p"><strong>Número de la Suerte:</strong> <span id="luckyNumber"></span></p>
+                    <p class="main_section_p"><strong>Hora de la Suerte:</strong> <span id="luckyTime"></span></p>
+                    <p class="main_section_p"><strong>Color del Día:</strong> <span id="color"></span></p>
                 </div>
             </section>
 
-            <hr>
-
-
+            <section id="imagen-secundaria" class="main__section">
+                <img class="main__section__image--secondary" src="/assets/img/PokeServices2.jpeg">
+            </section>
             <!-- Sección para mostrar los servicios -->
             <section id="horoscope-services" class="main__section main__section--services">
                 <h1 class="main__section_tittle">Servicios</h1>
+                <p class="main_section_p">Para una atención más personalizada contáctanos y conoce todos nuestros servicios:</p>
                 <ul>
-                    <li>Tarot</li>
-                    <li>Carta astral</li>
-                    <li>Medium</li>
-                    <li>Talleres</li>
-                    <li>Flores de bach</li>
+                    <li>Lecturas de tarot</li>
+                    <li>Lecturas temáticas</li>
+                    <li>Lecturas personalizadas</li>
+                    <li>Lecturas anuales o mensaules</li>
+                    <li>Talleres y cursos de tarot</li>
+                    <li>Terapia espiritual y coaching</li>
+                    <li>Lecturas grupales</li>
+                    <li>Interpretación de sueños</li>
+                    <li>Amuletos y rituales</li>
+                    <li>Acompañamiento en desiciones</li>
                 </ul>
             </section>
-
         </div>
     </main>
 

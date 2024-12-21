@@ -11,6 +11,12 @@ body {
   color: #333;
 }
 
+h2 {
+  font-weight: lighter;
+  margin: 0;
+  color: #fdfafa;
+}
+
 h3 {
   font-size: 1.2rem;
   font-weight: bold;
@@ -21,19 +27,6 @@ h3 {
 h4 {
   font-weight: bold;
   margin: 0;
-  color: #f30606;
-}
-
-h1 {
-  font-weight: bold;
-  margin: 0;
-  color: #fdfafa;
-}
-
-h2 {
-  font-weight: lighter;
-  margin: 0;
-  color: #fdfafa;
 }
 
 .navbar {
@@ -49,7 +42,7 @@ h2 {
   align-items: center;
   padding: 1rem 2rem;
   flex-direction: row;
-  justify-content: space-between;
+  gap: 1rem;
 }
 
 .navbar__logo {
@@ -103,9 +96,14 @@ h2 {
   font-size: 24px;
 }
 
+.navbar__tittle {
+  font-weight: bold;
+  margin: 0;
+  color: #fdfafa;
+}
+
 .navbar__menu {
-  display: flex;
-  align-items: center;
+  margin-left: auto;
 }
 
 .navbar__menu--active {
@@ -118,12 +116,9 @@ h2 {
     display: none;
   }
   .navbar__toggle {
-    display: block;
-    grid-column-start: 3;
-    color: #f30606;
-  }
-  .carousel__control {
-    padding: 0.5rem;
+    display: block !important;
+    color: #fdfafa;
+    margin-left: auto;
   }
   .footer__row {
     flex-direction: column;
@@ -135,7 +130,7 @@ main .main__container {
   margin: 2rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
-main .main__section--welcome {
+main .main__section {
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -143,26 +138,19 @@ main .main__section--welcome {
   flex-direction: column;
   align-items: center;
 }
-main .main__section_tittle {
+main .main__section .main__section_tittle {
   color: #000;
 }
-main .main__section--dob {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 2rem;
-  flex-direction: column;
-  align-items: center;
+main .main__section .main_section_p {
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  margin: 5px 0;
 }
-main .main__section--horoscope-disabled {
+main .main__section-disabled {
   display: none;
-}
-main .main__section--horoscope-active {
-  display: flex;
-  justify-content: center;
-  margin: 2rem 6rem 2rem 6rem;
-  flex-direction: column;
-  align-items: center;
 }
 main .main__section--services {
   display: flex;
@@ -170,6 +158,10 @@ main .main__section--services {
   margin: 2rem 6rem 2rem 6rem;
   flex-direction: column;
   align-items: center;
+}
+main .main__section__buttons {
+  display: flex;
+  gap: 1rem;
 }
 main .main__section__btn {
   padding: 0.5rem;
@@ -197,13 +189,16 @@ main .main__section__btn--nuevo-disabled {
 main .main__section__btn--nuevo-active {
   display: block;
 }
-main .main__section--image {
+main .main__section__image--primary {
   width: 100%;
+  height: auto;
+}
+main .main__section__image--secondary {
+  width: 75%;
   height: auto;
 }
 main .main__section__pokemon {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -217,28 +212,6 @@ main .main__section__horoscope {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   margin: 1rem;
   padding: 1rem;
-}
-main .horoscope-input {
-  text-align: center;
-  margin: 1rem 0;
-}
-main .horoscope-input .input-container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 0.5rem;
-}
-main .horoscope-input .input-container input, main .horoscope-input .input-container button {
-  padding: 0.5rem 1rem;
-}
-main .horoscope-input .input-container button {
-  background-color: #ff6600;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-main .horoscope-input .input-container button:hover {
-  background-color: #ffcc00;
 }
 main .results {
   text-align: center;
@@ -318,7 +291,7 @@ main .results .pokemon-button:hover {
 .footer__bottom {
   margin-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
-  padding-top: 1rem;
+  padding-top: 4rem;
 }
 
 .footer__copyright {

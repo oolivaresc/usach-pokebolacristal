@@ -99,8 +99,8 @@ import {dailyHoroscope} from './models/daily-horoscope.js';
   btnNew.addEventListener("click", async (event)=>{
      //Desactivamos el section con el resultado
      const horoscopeResults = document.getElementById("horoscope-results");
-     horoscopeResults.classList.remove('main__section--horoscope-active');
-     horoscopeResults.classList.add('main__section--horoscope-disabled');
+     horoscopeResults.classList.remove('main__section-active');
+     horoscopeResults.classList.add('main__section-disabled');
  
      //Activamos el botón consulta
      const btnDob = document.getElementById("btn-dob");

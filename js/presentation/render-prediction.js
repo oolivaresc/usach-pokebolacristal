@@ -25,8 +25,8 @@ export const renderPredictions = (dailyHoroscope) => {
 
     //Mostramos el section con el resultado
     const horoscopeResults = document.getElementById("horoscope-results");
-    horoscopeResults.classList.remove('main__section--horoscope-disabled');
-    horoscopeResults.classList.add('main__section--horoscope-active');
+    horoscopeResults.classList.remove('main__section-disabled');
+    horoscopeResults.classList.add('main__section-active');
 
     //Desactivamos el botón consulta
     const btnDob = document.getElementById("btn-dob");

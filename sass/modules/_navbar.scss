@@ -13,7 +13,7 @@
   align-items: center;
   padding: 1rem 2rem;
   flex-direction: row;
-  justify-content: space-between;
+  gap: 1rem;
 }
 
 .navbar__logo {
@@ -65,12 +65,14 @@
   cursor: pointer;
   font-size: 24px;
 }
-
-.navbar__menu {
-  display: flex;
-  align-items: center;
+.navbar__tittle {
+  font-weight: bold;
+  margin: 0;
+  color: variables.$blanquito;
 }
-
+.navbar__menu {
+  margin-left: auto; 
+}
 .navbar__menu--active {
   display: block !important;
   gap: 10px;
@@ -81,12 +83,9 @@
     display: none;
   }
   .navbar__toggle {
-    display: block;
-    grid-column-start: 3;
-    color: variables.$background-light;
-  }
-  .carousel__control {
-    padding: 0.5rem;
+    display: block!important;
+    color: variables.$blanquito;
+    margin-left: auto; 
   }
   .footer__row {
     flex-direction: column;
